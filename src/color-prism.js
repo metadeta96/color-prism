@@ -5,7 +5,7 @@
  */
 var ColorPrism;
 
-// (function () {
+(function () {
     /**
      * Convert degrees to radian
      * @param  {number} degrees 
@@ -372,7 +372,7 @@ var ColorPrism;
             d360Rad: degreesToRad(360)
         },
     };
-// })();
+})();
 
 if (module && module.exports) {
     module.exports = ColorPrism;

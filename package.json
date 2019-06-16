@@ -1,6 +1,6 @@
 {
   "name": "color-prism",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple color manipulation functions",
   "main": "index.js",
   "scripts": {
