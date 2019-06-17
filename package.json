@@ -1,11 +1,11 @@
 {
   "name": "color-prism",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Simple color manipulation functions",
   "main": "index.js",
   "scripts": {
     "test": "mocha ./src/**/*.spec.js",
-    "build": "mkdir dist && uglifyjs --compress --mangle --output dist/color-prism.min.js -- src/color-prism.js",
+    "build": "uglifyjs --compress --mangle --output dist/color-prism.min.js -- src/color-prism.js",
     "doc": "jsdoc2md src/color-prism.js --no-cache >> partial-doc.md"
   },
   "repository": {
