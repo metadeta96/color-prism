@@ -63,7 +63,7 @@ var ColorPrism;
      * @return {RGB}
      */
     RGB.prototype.grayScale = function () {
-        const mean = (this.r + this.g + this.b) / 3;
+        var mean = (this.r + this.g + this.b) / 3;
         return rgb(mean, mean, mean);
     }
 
