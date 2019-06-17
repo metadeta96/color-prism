@@ -59,6 +59,15 @@ var ColorPrism;
     }
 
     /**
+     * Get a gray scale rgb color from this color
+     * @return {RGB}
+     */
+    RGB.prototype.grayScale = function () {
+        const mean = (this.r + this.g + this.b) / 3;
+        return rgb(mean, mean, mean);
+    }
+
+    /**
      * RGB helper function
      * @param  {number} r red value (0..255) or {RGB} instance
      * @param  {number} g green value (0..255)
@@ -259,6 +268,35 @@ var ColorPrism;
     }
 
     /**
+     * Change the range of a RGB color from `0 to 255` to `0 to 1`
+     * @param  {number} r red value (0..255) or {RGB} instance
+     * @param  {number} g green value (0..255)
+     * @param  {number} b blue value (0..255)
+     * @return {RGB}
+     */
+    var normalize = function (r, g, b) {
+        var rgbColor = rgb(r, g, b);
+
+        return rgbColor.normalize();
+    }
+
+    /**
+     * Get a gray scale rgb color
+     * @param  {number} r red value (0..255) or {RGB} instance or {CMYK} instance or {HSL} instance
+     * @param  {number} g green value (0..255)
+     * @param  {number} b blue value (0..255)
+     * @return {RGB}
+     */
+    var grayScale = function (r, g, b) {
+        if (r instanceof HSL) {
+            return grayScale(hslToRgb(r));
+        }
+        var rgbColor = rgb(r, g, b);
+
+        return rgbColor.grayScale();
+    }
+
+    /**
      * Change the hue value of a RGB color
      * @param  {number} h hue value (0..2PI)
      * @param  {number} r red value (0..255) or {RGB} instance
@@ -345,6 +383,12 @@ var ColorPrism;
         return cmykToRgb(cmykColor);
     }
 
+    var __generateConstantObject = function (object) {
+        object = Object.seal(object);
+        object = Object.freeze(object)
+        return object;
+    }
+
     ColorPrism = {
         degreesToRad: degreesToRad,
         RGB: RGB,
@@ -357,6 +401,8 @@ var ColorPrism;
         hslToRgb: hslToRgb,
         rgbToCmyk: rgbToCmyk,
         cmykToRgb: cmykToRgb,
+        normalize: normalize,
+        grayScale: grayScale,
         hue: hue,
         saturation: saturation,
         lighting: lighting,
@@ -371,6 +417,13 @@ var ColorPrism;
             d300Rad: _300dRad,
             d360Rad: degreesToRad(360)
         },
+        colors: {
+            white: __generateConstantObject(rgb(255, 255, 255)),
+            black: __generateConstantObject(rgb(0, 0, 0)),
+            red: __generateConstantObject(rgb(255, 0, 0)),
+            green: __generateConstantObject(rgb(0, 255, 0)),
+            blue: __generateConstantObject(rgb(0, 0, 255)),
+        }
     };
 })();
 
@@ -379,21 +432,23 @@ if (module && module.exports) {
 } else if (window && !window.ColorPrism) {
     window.ColorPrism = ColorPrism;
     
-    var degreesToRad = degreesToRad;
-    var RGB = RGB;
-    var rgb = rgb;
-    var HSL = HSL;
-    var hsl = hsl;
-    var CMYK = CMYK;
-    var cmyk = cmyk;
-    var rgbToHsl = rgbToHsl;
-    var hslToRgb = hslToRgb;
-    var rgbToCmyk = rgbToCmyk;
-    var cmykToRgb = cmykToRgb;
-    var hue = hue;
-    var saturation = saturation;
-    var lighting = lighting;
-    var cyan = cyan;
-    var magenta = magenta;
-    var yellow = yellow;
+    var degreesToRad = ColorPrism.degreesToRad;
+    var RGB = ColorPrism.RGB;
+    var rgb = ColorPrism.rgb;
+    var HSL = ColorPrism.HSL;
+    var hsl = ColorPrism.hsl;
+    var CMYK = ColorPrism.CMYK;
+    var cmyk = ColorPrism.cmyk;
+    var rgbToHsl = ColorPrism.rgbToHsl;
+    var hslToRgb = ColorPrism.hslToRgb;
+    var rgbToCmyk = ColorPrism.rgbToCmyk;
+    var cmykToRgb = ColorPrism.cmykToRgb;
+    var normalize = ColorPrism.normalize;
+    var grayScale = ColorPrism.grayScale;
+    var hue = ColorPrism.hue;
+    var saturation = ColorPrism.saturation;
+    var lighting = ColorPrism.lighting;
+    var cyan = ColorPrism.cyan;
+    var magenta = ColorPrism.magenta;
+    var yellow = ColorPrism.yellow;
 }

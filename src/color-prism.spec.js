@@ -113,6 +113,18 @@ describe('ColorPrism', () => {
         expect(rgbColor).to.deep.equal(blue);
     });
 
+    it('should normalize a color', () => {
+        let rgbColor;
+        rgbColor = ColorPrism.normalize(255, 255, 255);
+        testColor(rgbColor, {r: 1, b: 1, g: 1});
+    });
+
+    it('should get a gray scale color', () => {
+        let rgbColor;
+        rgbColor = ColorPrism.grayScale(red);
+        testColor(rgbColor, {r: 85, b: 85, g: 85});
+    });
+
     it('should change the hue value of a rgb color correctly', () => {        
         let rgbColor;
         const d88Rad = ColorPrism.degreesToRad(88);

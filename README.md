@@ -35,28 +35,31 @@ On browsers, there are 3 aways to access the library:
 ## Reference
 
 * [ColorPrism](#module_color-prism)
-    * [~degreesToRad(degrees)](#module_color-prism..degreesToRad) ⇒ <code>number</code>
-    * [~RGB(r, g, b)](#module_color-prism..RGB) ⇒ <code>RGB</code>
+    * [degreesToRad(degrees)](#module_color-prism..degreesToRad) ⇒ <code>number</code>
+    * [RGB(r, g, b)](#module_color-prism..RGB) ⇒ <code>RGB</code>
         * [.normalize()](#module_color-prism..RGB+normalize) ⇒ <code>RGB</code>
-    * [~rgb(r, g, b)](#module_color-prism..rgb) ⇒ <code>RGB</code>
-    * [~HSL(h, s, l)](#module_color-prism..HSL) ⇒ <code>HSL</code>
-    * [~hsl(h, s, l)](#module_color-prism..hsl) ⇒ <code>HSL</code>
-    * [~CMYK(c, m, y, k)](#module_color-prism..CMYK) ⇒ <code>CMYK</code>
-    * [~cmyk(c, m, y, k)](#module_color-prism..cmyk) ⇒ <code>CMYK</code>
-    * [~rgbToHsl(r, g, b)](#module_color-prism..rgbToHsl) ⇒ <code>HSL</code>
-    * [~hslToRgb(h, s, l)](#module_color-prism..hslToRgb) ⇒ <code>RGB</code>
-    * [~rgbToCmyk(r, g, b)](#module_color-prism..rgbToCmyk) ⇒ <code>CMYK</code>
-    * [~cmykToRgb(c, m, y, k)](#module_color-prism..cmykToRgb) ⇒ <code>RGB</code>
-    * [~hue(h, r, g, b)](#module_color-prism..hue) ⇒ <code>RGB</code>
-    * [~saturation(s, r, g, b)](#module_color-prism..saturation) ⇒ <code>RGB</code>
-    * [~lighting(l, r, g, b)](#module_color-prism..lighting) ⇒ <code>RGB</code>
-    * [~cyan(c, r, g, b)](#module_color-prism..cyan) ⇒ <code>RGB</code>
-    * [~magenta(m, r, g, b)](#module_color-prism..magenta) ⇒ <code>RGB</code>
-    * [~yellow(y, r, g, b)](#module_color-prism..yellow) ⇒ <code>RGB</code>
+        * [.grayScale()](#module_color-prism..RGB+grayScale) ⇒ <code>RGB</code>
+    * [rgb(r, g, b)](#module_color-prism..rgb) ⇒ <code>RGB</code>
+    * [HSL(h, s, l)](#module_color-prism..HSL) ⇒ <code>HSL</code>
+    * [hsl(h, s, l)](#module_color-prism..hsl) ⇒ <code>HSL</code>
+    * [CMYK(c, m, y, k)](#module_color-prism..CMYK) ⇒ <code>CMYK</code>
+    * [cmyk(c, m, y, k)](#module_color-prism..cmyk) ⇒ <code>CMYK</code>
+    * [rgbToHsl(r, g, b)](#module_color-prism..rgbToHsl) ⇒ <code>HSL</code>
+    * [hslToRgb(h, s, l)](#module_color-prism..hslToRgb) ⇒ <code>RGB</code>
+    * [rgbToCmyk(r, g, b)](#module_color-prism..rgbToCmyk) ⇒ <code>CMYK</code>
+    * [cmykToRgb(c, m, y, k)](#module_color-prism..cmykToRgb) ⇒ <code>RGB</code>
+    * [normalize(r, g, b)](#module_color-prism..normalize) ⇒ <code>RGB</code>
+    * [grayScale(r, g, b)](#module_color-prism..grayScale) ⇒ <code>RGB</code>
+    * [hue(h, r, g, b)](#module_color-prism..hue) ⇒ <code>RGB</code>
+    * [saturation(s, r, g, b)](#module_color-prism..saturation) ⇒ <code>RGB</code>
+    * [lighting(l, r, g, b)](#module_color-prism..lighting) ⇒ <code>RGB</code>
+    * [cyan(c, r, g, b)](#module_color-prism..cyan) ⇒ <code>RGB</code>
+    * [magenta(m, r, g, b)](#module_color-prism..magenta) ⇒ <code>RGB</code>
+    * [yellow(y, r, g, b)](#module_color-prism..yellow) ⇒ <code>RGB</code>
 
 <a name="module_color-prism..degreesToRad"></a>
 
-### ColorPrism~degreesToRad(degrees) ⇒ <code>number</code>
+### degreesToRad(degrees) ⇒ <code>number</code>
 Convert degrees to radian
 
 **Kind**: inner method of [<code>ColorPrism</code>](#module_color-prism)  
@@ -67,7 +70,7 @@ Convert degrees to radian
 
 <a name="module_color-prism..RGB"></a>
 
-### ColorPrism~RGB(r, g, b) ⇒ <code>RGB</code>
+### RGB(r, g, b) ⇒ <code>RGB</code>
 RGB class for storing color values
 
 **Kind**: inner method of [<code>ColorPrism</code>](#module_color-prism)  
@@ -80,13 +83,21 @@ RGB class for storing color values
 
 <a name="module_color-prism..RGB+normalize"></a>
 
-#### rgB.normalize() ⇒ <code>RGB</code>
+#### RGB.normalize() ⇒ <code>RGB</code>
 Change the range from `0 to 255` to `0 to 1`
 
 **Kind**: instance method of [<code>RGB</code>](#module_color-prism..RGB)  
+
+<a name="module_color-prism..RGB+grayScale"></a>
+
+#### RGB.grayScale() ⇒ <code>RGB</code>
+Get a gray scale rgb color from this color
+
+**Kind**: instance method of [<code>RGB</code>](#module_color-prism..RGB)  
+
 <a name="module_color-prism..rgb"></a>
 
-### ColorPrism~rgb(r, g, b) ⇒ <code>RGB</code>
+### rgb(r, g, b) ⇒ <code>RGB</code>
 RGB helper function
 
 **Kind**: inner method of [<code>ColorPrism</code>](#module_color-prism)  
@@ -99,7 +110,7 @@ RGB helper function
 
 <a name="module_color-prism..HSL"></a>
 
-### ColorPrism~HSL(h, s, l) ⇒ <code>HSL</code>
+### HSL(h, s, l) ⇒ <code>HSL</code>
 HSL class for storing color values
 
 **Kind**: inner method of [<code>ColorPrism</code>](#module_color-prism)  
@@ -112,7 +123,7 @@ HSL class for storing color values
 
 <a name="module_color-prism..hsl"></a>
 
-### ColorPrism~hsl(h, s, l) ⇒ <code>HSL</code>
+### hsl(h, s, l) ⇒ <code>HSL</code>
 HSL helper function
 
 **Kind**: inner method of [<code>ColorPrism</code>](#module_color-prism)  
@@ -125,7 +136,7 @@ HSL helper function
 
 <a name="module_color-prism..CMYK"></a>
 
-### ColorPrism~CMYK(c, m, y, k) ⇒ <code>CMYK</code>
+### CMYK(c, m, y, k) ⇒ <code>CMYK</code>
 CMYK class for storing color values
 
 **Kind**: inner method of [<code>ColorPrism</code>](#module_color-prism)  
@@ -139,7 +150,7 @@ CMYK class for storing color values
 
 <a name="module_color-prism..cmyk"></a>
 
-### ColorPrism~cmyk(c, m, y, k) ⇒ <code>CMYK</code>
+### cmyk(c, m, y, k) ⇒ <code>CMYK</code>
 CMYK helper function
 
 **Kind**: inner method of [<code>ColorPrism</code>](#module_color-prism)  
@@ -153,7 +164,7 @@ CMYK helper function
 
 <a name="module_color-prism..rgbToHsl"></a>
 
-### ColorPrism~rgbToHsl(r, g, b) ⇒ <code>HSL</code>
+### rgbToHsl(r, g, b) ⇒ <code>HSL</code>
 Method to convert RGB to HSL
 
 **Kind**: inner method of [<code>ColorPrism</code>](#module_color-prism)  
@@ -166,7 +177,7 @@ Method to convert RGB to HSL
 
 <a name="module_color-prism..hslToRgb"></a>
 
-### ColorPrism~hslToRgb(h, s, l) ⇒ <code>RGB</code>
+### hslToRgb(h, s, l) ⇒ <code>RGB</code>
 Method to convert HSL to RGB
 
 **Kind**: inner method of [<code>ColorPrism</code>](#module_color-prism)  
@@ -179,7 +190,7 @@ Method to convert HSL to RGB
 
 <a name="module_color-prism..rgbToCmyk"></a>
 
-### ColorPrism~rgbToCmyk(r, g, b) ⇒ <code>CMYK</code>
+### rgbToCmyk(r, g, b) ⇒ <code>CMYK</code>
 Method to convert RGB to CMYK
 
 **Kind**: inner method of [<code>ColorPrism</code>](#module_color-prism)  
@@ -192,7 +203,7 @@ Method to convert RGB to CMYK
 
 <a name="module_color-prism..cmykToRgb"></a>
 
-### ColorPrism~cmykToRgb(c, m, y, k) ⇒ <code>RGB</code>
+### cmykToRgb(c, m, y, k) ⇒ <code>RGB</code>
 Method to convert CMYK to RGB
 
 **Kind**: inner method of [<code>ColorPrism</code>](#module_color-prism)  
@@ -204,9 +215,35 @@ Method to convert CMYK to RGB
 | y | <code>number</code> | yellow value (0..1) |
 | k | <code>number</code> | black key value (0..1) |
 
+<a name="module_color-prism..normalize"></a>
+
+### normalize(r, g, b) ⇒ <code>RGB</code>
+Change the range of a RGB color from `0 to 255` to `0 to 1`
+
+**Kind**: inner method of [<code>ColorPrism</code>](#module_color-prism)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| r | <code>number</code> | red value (0..255) or {RGB} instance |
+| g | <code>number</code> | green value (0..255) |
+| b | <code>number</code> | blue value (0..255) |
+
+<a name="module_color-prism..grayScale"></a>
+
+### grayScale(r, g, b) ⇒ <code>RGB</code>
+Get a gray scale rgb color
+
+**Kind**: inner method of [<code>ColorPrism</code>](#module_color-prism)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| r | <code>number</code> | red value (0..255) or {RGB} instance or {CMYK} instance or {HSL} instance |
+| g | <code>number</code> | green value (0..255) |
+| b | <code>number</code> | blue value (0..255) |
+
 <a name="module_color-prism..hue"></a>
 
-### ColorPrism~hue(h, r, g, b) ⇒ <code>RGB</code>
+### hue(h, r, g, b) ⇒ <code>RGB</code>
 Change the hue value of a RGB color
 
 **Kind**: inner method of [<code>ColorPrism</code>](#module_color-prism)  
@@ -220,7 +257,7 @@ Change the hue value of a RGB color
 
 <a name="module_color-prism..saturation"></a>
 
-### ColorPrism~saturation(s, r, g, b) ⇒ <code>RGB</code>
+### saturation(s, r, g, b) ⇒ <code>RGB</code>
 Change the saturation value of a RGB color
 
 **Kind**: inner method of [<code>ColorPrism</code>](#module_color-prism)  
@@ -234,7 +271,7 @@ Change the saturation value of a RGB color
 
 <a name="module_color-prism..lighting"></a>
 
-### ColorPrism~lighting(l, r, g, b) ⇒ <code>RGB</code>
+### lighting(l, r, g, b) ⇒ <code>RGB</code>
 Change the lighting value of a RGB color
 
 **Kind**: inner method of [<code>ColorPrism</code>](#module_color-prism)  
@@ -248,7 +285,7 @@ Change the lighting value of a RGB color
 
 <a name="module_color-prism..cyan"></a>
 
-### ColorPrism~cyan(c, r, g, b) ⇒ <code>RGB</code>
+### cyan(c, r, g, b) ⇒ <code>RGB</code>
 Change the cyan tone of a RGB color
 
 **Kind**: inner method of [<code>ColorPrism</code>](#module_color-prism)  
@@ -262,7 +299,7 @@ Change the cyan tone of a RGB color
 
 <a name="module_color-prism..magenta"></a>
 
-### ColorPrism~magenta(m, r, g, b) ⇒ <code>RGB</code>
+### magenta(m, r, g, b) ⇒ <code>RGB</code>
 Change the magenta tone of a RGB color
 
 **Kind**: inner method of [<code>ColorPrism</code>](#module_color-prism)  
@@ -276,7 +313,7 @@ Change the magenta tone of a RGB color
 
 <a name="module_color-prism..yellow"></a>
 
-### ColorPrism~yellow(y, r, g, b) ⇒ <code>RGB</code>
+### yellow(y, r, g, b) ⇒ <code>RGB</code>
 Change the yellow tone of a RGB color
 
 **Kind**: inner method of [<code>ColorPrism</code>](#module_color-prism)  
