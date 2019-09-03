@@ -1,12 +1,11 @@
 {
   "name": "color-prism",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Simple color manipulation functions",
   "main": "index.js",
   "scripts": {
     "test": "mocha ./src/**/*.spec.js",
-    "build": "uglifyjs --compress --mangle --output dist/color-prism.min.js -- src/color-prism.js",
-    "doc": "jsdoc2md src/color-prism.js --no-cache >> partial-doc.md"
+    "prepublish": "uglifyjs --compress --mangle --output dist/color-prism.min.js -- src/color-prism.js"
   },
   "repository": {
     "type": "git",
@@ -30,8 +29,7 @@
   "homepage": "https://github.com/metadeta96/color-prism#readme",
   "devDependencies": {
     "chai": "^4.2.0",
-    "jsdoc-to-markdown": "^5.0.0",
-    "mocha": "^6.1.4",
+    "mocha": "^6.2.0",
     "uglify-js": "^3.6.0"
   }
 }
